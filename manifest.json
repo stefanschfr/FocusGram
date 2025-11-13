@@ -9,7 +9,11 @@
       "matches": [
         "*://www.instagram.com/*"
       ],
-      "js": ["rules.js", "utils.js", "content.js"]
+      "js": [
+        "rules.js",
+        "utils.js",
+        "content.js"
+      ]
     }
   ]
 }

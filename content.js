@@ -10,7 +10,7 @@ function init() {
             lastUrl = currentUrl;
             handleRedirectsSPA(RULES.redirects); // re-check redirect on SPA navigation
         }
-    }).observe(document, { subtree: true, childList: true });
+    }).observe(document, {subtree: true, childList: true});
 }
 
 init(); // start extension

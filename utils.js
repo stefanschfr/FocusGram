@@ -1,6 +1,6 @@
 function removeSelectors(selectors) {
     // Removes all elements defined in the RULES
-    for (const { selector } of selectors) {
+    for (const {selector} of selectors) {
         for (const el of document.querySelectorAll(selector)) {
             el.remove();
         }
@@ -14,7 +14,7 @@ function handleRedirectsSPA(redirects) {
         // Check if the current URL matches the rule; query parameters are ignored
         const match = rule.exactMatch
             ? url.pathname === rule.fromPath || (url.pathname === '' && rule.fromPath === '/')
-            : url.pathname.startsWith(rule.fromPath);
+            : url.pathname.startsWith(rule.fromPath) ;
 
         if (!match) continue;
 
@@ -33,6 +33,6 @@ function handleRedirectsSPA(redirects) {
 
 function observeAndClean(callback) {
     const observer = new MutationObserver(callback); // observe DOM changes
-    observer.observe(document.body, { childList: true, subtree: true });
+    observer.observe(document.body, {childList: true, subtree: true});
     callback(); // run once initially
 }
