@@ -10,5 +10,17 @@ const RULES = {
             toUrl: "/?variant=following",   // target URL (relative)
             exactMatch: true                // match only "/" exactly, ignore query parameters
         },
+        {
+            id: "ig-reels-to-following",
+            fromPath: "/reels/",
+            toUrl: "/?variant=following",
+            exactMatch: false
+        },
+        {
+            id: "ig-explore-to-following",
+            fromPath: "/explore/",
+            toUrl: "/?variant=following",
+            exactMatch: true
+        }
     ]
 };
