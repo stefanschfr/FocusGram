@@ -1,6 +1,5 @@
 const RULES = {
     selectors: [
-        {id: "ig-explore", selector: 'a[href="/explore/"]'}, // remove link to Explore
         {id: "ig-reels", selector: 'a[href="/reels/"]'}      // remove link to Reels
     ],
     redirects: [
@@ -15,12 +14,6 @@ const RULES = {
             fromPath: "/reels/",
             toUrl: "/?variant=following",
             exactMatch: false
-        },
-        {
-            id: "ig-explore-to-following",
-            fromPath: "/explore/",
-            toUrl: "/?variant=following",
-            exactMatch: true
         }
     ]
 };

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "FocusedGram",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Removes all distractions from Instagram so you can focus.",
   "browser_specific_settings": {
     "gecko": {

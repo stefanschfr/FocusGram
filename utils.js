@@ -7,6 +7,19 @@ function removeSelectors(selectors) {
     }
 }
 
+function openSearchOnExplore() {
+    if (location.pathname !== "/explore/") return;
+
+    const searchInput = document.querySelector(
+        'input[aria-label="Search input"], input[aria-label="Sucheingabe"]'
+    );
+
+    if (searchInput && document.activeElement !== searchInput) {
+        searchInput.click();
+        searchInput.focus();
+    }
+}
+
 function handleRedirectsSPA(redirects) {
     for (const rule of redirects) {
         const url = new URL(window.location.href);
@@ -14,7 +27,7 @@ function handleRedirectsSPA(redirects) {
         // Check if the current URL matches the rule; query parameters are ignored
         const match = rule.exactMatch
             ? url.pathname === rule.fromPath || (url.pathname === '' && rule.fromPath === '/')
-            : url.pathname.startsWith(rule.fromPath) ;
+            : url.pathname.startsWith(rule.fromPath);
 
         if (!match) continue;
 
@@ -31,7 +44,7 @@ function handleRedirectsSPA(redirects) {
     }
 }
 
-function observeAndClean(callback) {
+function observeAndApply(callback) {
     const observer = new MutationObserver(callback); // observe DOM changes
     observer.observe(document.body, {childList: true, subtree: true});
     callback(); // run once initially

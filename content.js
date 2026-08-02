@@ -1,6 +1,9 @@
 function init() {
     handleRedirectsSPA(RULES.redirects);            // check initial redirect
-    observeAndClean(() => removeSelectors(RULES.selectors)); // clean up the DOM
+    observeAndApply(() => {
+        removeSelectors(RULES.selectors);
+        openSearchOnExplore();
+    });
 
     // Monitor SPA navigation: URL changes within the same page
     let lastUrl = location.href;
